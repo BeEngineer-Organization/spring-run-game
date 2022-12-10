@@ -56,6 +56,10 @@ class Main(ShowBase):
         self.game_start_scene.title_menu.hide()
         self.game_start_scene.title_menu_backdrop.hide()
 
+        # プレイヤーの初期化処理
+        if self.player != None:
+            self.player.cleanup()
+
         # 効果音の切り替え
 
         # ゲームフラグをオンにする
