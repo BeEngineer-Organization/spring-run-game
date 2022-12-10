@@ -13,7 +13,7 @@ class Main(ShowBase):
         super().__init__()
         # プレイヤーの変数
 
-        # ゲーム設定
+        # ゲームフラグ設定
 
         # キーボード入力設定
 
@@ -95,7 +95,6 @@ class Main(ShowBase):
 
     # 車を出現させる関数
     def spawn_car(self, p_y):
-        # 車を物理ワールドにアタッチする
         pass
 
     # 毎フレーム行う処理
