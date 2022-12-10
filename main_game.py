@@ -72,14 +72,11 @@ class Main(ShowBase):
     def cleanup(self):
         self.is_contact = False
         self.is_game = False
+        self.scene.physical_world.removeRigidBody(self.player.node())
         for car in self.cars:
             self.scene.physical_world.removeRigidBody(car.node())
             car.cleanup()
         self.cars = []
-        self.camera.reparentTo(base.render)
-        self.scene.physical_world.removeRigidBody(self.player.node())
-        if self.player != None:
-            self.player.cleanup()
 
     # ゲームオーバー画面でやめるが押された時にメインにスタート画面に移る関数
     def quit(self):
@@ -91,7 +88,9 @@ class Main(ShowBase):
         # 効果音を切り替える
 
         # 初期化処理
-        self.cleanup()
+        if self.player != None:
+            self.player.cleanup()
+            self.camera.reparentTo(base.render)
 
     # 車を出現させる関数
     def spawn_car(self, p_y):
