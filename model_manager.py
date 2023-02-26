@@ -12,7 +12,7 @@ PATH_ROAD_TEXTURE = "textures/asphalt.jpg"
 PATH_TUNNEL_TEXTURE = "textures/tunnel.jpg"
 PATH_CAR = "models/car.glb"
 # トンネルのパスを設定
-PATH_TUNNLE = ""
+PATH_TUNNEL = ""
 # プレイヤーのパスを設定
 PATH_PLAYER = ""
 
@@ -41,7 +41,7 @@ class Player(NodePath):
         # プレイヤーの座標
 
         # プレイヤーの速度
-        
+
     # プレイヤーのジャンプ
     def jump(self):
         sec = Sequence(
